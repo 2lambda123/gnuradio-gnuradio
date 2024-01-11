@@ -21,7 +21,10 @@ import os
 import numpy as np
 
 
-class file_taps_loader(gr.basic_block):
+class file_taps_loader(gr.Block):
+    """
+    Block to make filter taps created by the filter design tool available in grc.
+    """
     """
     Block to make filter taps created by the filter design tool available in grc.
     """
