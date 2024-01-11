@@ -29,7 +29,9 @@ class ParserErrorsDialog(Gtk.Dialog):
             Gtk.STOCK_CLOSE, Gtk.ResponseType.ACCEPT))
 
         self._error_logs = None
+        self._error_logs = None
         self.tree_store = Gtk.TreeStore(str)
+        self.update_tree_store(error_logs)
         self.update_tree_store(error_logs)
 
         column = Gtk.TreeViewColumn('XML Parser Errors by Filename')
