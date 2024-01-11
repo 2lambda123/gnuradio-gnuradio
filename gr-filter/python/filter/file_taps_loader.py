@@ -30,7 +30,7 @@ class file_taps_loader(gr.Block):
     """
 
     def __init__(self, fpath, verbose):
-        gr.basic_block.__init__(
+        gr.Block.__init__(
             self,
             name="file_taps_loader",
             in_sig=[],
