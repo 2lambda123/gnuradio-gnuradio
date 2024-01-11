@@ -7,7 +7,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 """
 
 
-from gi.repository import Gtk, GObject, Gtk, TreeStore, ScrolledWindow
+from gi.repository import Gtk, GObject, TreeStore, ScrolledWindow
 
 from .Constants import MIN_DIALOG_WIDTH, MIN_DIALOG_HEIGHT
 
