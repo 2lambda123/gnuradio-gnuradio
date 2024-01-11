@@ -17,6 +17,7 @@ class ParserErrorsDialog(Gtk.Dialog):
     A dialog for viewing parser errors
     """
 
+    
     def __init__(self, error_logs):
         """
         Properties dialog constructor.
