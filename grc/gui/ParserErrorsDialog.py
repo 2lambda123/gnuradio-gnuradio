@@ -85,6 +85,12 @@ class ParserErrorsDialog(Gtk.Dialog):
                     )])
 
     def run(self):  # Run the dialog and get its response
+        """
+        Run the dialog and get its response.
+
+        Returns:
+            true if the response was accept
+        """
         
         """
         Run the dialog and get its response.
