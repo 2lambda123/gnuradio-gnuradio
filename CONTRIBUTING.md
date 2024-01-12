@@ -34,7 +34,10 @@ For that purpose, we use the [Developer's Certificate of Origin](DCO.txt). It
 is the same document used by other projects. Signing the DCO states that there
 are no legal reasons to not merge your code.
 
-To sign the DCO, suffix your git commits with a "Signed-off-by" line. When
+To sign the DCO, please follow the steps below:
+1. Suffix your git commits with a "Signed-off-by" line.
+2. Use `git commit -s` to automatically add this line when using the command line.
+3. If there are multiple authors of the code or other types of stakeholders, make sure that all are listed, each with a separate Signed-off-by line., suffix your git commits with a "Signed-off-by" line. When
 using the command line, you can use `git commit -s` to automatically add this
 line. If there were multiple authors of the code, or other types of
 stakeholders, make sure that all are listed, each with a separate Signed-off-by
