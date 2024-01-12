@@ -20,7 +20,7 @@ class ParserErrorsDialog(Gtk.Dialog):
     
     def __init__(self, error_logs):
         """
-        Properties dialog constructor.
+        ParserErrorsDialog constructor, initializes the ParserErrorsDialog object.
 
         Args:
             block: a block instance
@@ -28,7 +28,7 @@ class ParserErrorsDialog(Gtk.Dialog):
         GObject.GObject.__init__(self, title='Parser Errors', buttons=(
             Gtk.STOCK_CLOSE, Gtk.ResponseType.ACCEPT))
 
-        self._error_logs = None
+ 
         self._error_logs = None
         self.tree_store = Gtk.TreeStore(str)
         self.update_tree_store(error_logs)
