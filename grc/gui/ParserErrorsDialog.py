@@ -18,7 +18,8 @@ class ParserErrorsDialog(Gtk.Dialog):
     """
 
     
-    def __init__(self, error_logs):
+    def __init__(self, error_logs):  # Initialize the ParserErrorsDialog object
+        
         """
         ParserErrorsDialog constructor, initializes the ParserErrorsDialog object.
 
@@ -29,7 +30,7 @@ class ParserErrorsDialog(Gtk.Dialog):
             Gtk.STOCK_CLOSE, Gtk.ResponseType.ACCEPT))
 
  
-        self._error_logs = None
+
         self.tree_store = Gtk.TreeStore(str)
         self.update_tree_store(error_logs)
         self.update_tree_store(error_logs)
@@ -60,7 +61,8 @@ class ParserErrorsDialog(Gtk.Dialog):
         self.set_size_request(2 * MIN_DIALOG_WIDTH, MIN_DIALOG_HEIGHT)
         self.show_all()
 
-    def update_tree_store(self, error_logs):
+    def update_tree_store(self, error_logs):  # Set up data model
+        
         """set up data model"""
         self.tree_store.clear()
         self._error_logs = error_logs
@@ -82,7 +84,8 @@ class ParserErrorsDialog(Gtk.Dialog):
                         for line in range(error.line - 2, error.line + 3) if 0 < line <= len(code)
                     )])
 
-    def run(self):
+    def run(self):  # Run the dialog and get its response
+        
         """
         Run the dialog and get its response.
 
