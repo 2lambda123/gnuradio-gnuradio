@@ -7,7 +7,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 """
 
 
-from gi.repository import Gtk, GObject
+from gi.repository import Gtk, GObject, TreeStore, ScrolledWindow
 
 from .Constants import MIN_DIALOG_WIDTH, MIN_DIALOG_HEIGHT
 
@@ -17,9 +17,11 @@ class ParserErrorsDialog(Gtk.Dialog):
     A dialog for viewing parser errors
     """
 
-    def __init__(self, error_logs):
+    
+    def __init__(self, error_logs):  # Initialize the ParserErrorsDialog object
+        
         """
-        Properties dialog constructor.
+        ParserErrorsDialog constructor, initializes the ParserErrorsDialog object.
 
         Args:
             block: a block instance
@@ -27,8 +29,10 @@ class ParserErrorsDialog(Gtk.Dialog):
         GObject.GObject.__init__(self, title='Parser Errors', buttons=(
             Gtk.STOCK_CLOSE, Gtk.ResponseType.ACCEPT))
 
-        self._error_logs = None
+ 
+
         self.tree_store = Gtk.TreeStore(str)
+        self.update_tree_store(error_logs)
         self.update_tree_store(error_logs)
 
         column = Gtk.TreeViewColumn('XML Parser Errors by Filename')
@@ -57,7 +61,8 @@ class ParserErrorsDialog(Gtk.Dialog):
         self.set_size_request(2 * MIN_DIALOG_WIDTH, MIN_DIALOG_HEIGHT)
         self.show_all()
 
-    def update_tree_store(self, error_logs):
+    def update_tree_store(self, error_logs):  # Set up data model
+        
         """set up data model"""
         self.tree_store.clear()
         self._error_logs = error_logs
@@ -79,7 +84,14 @@ class ParserErrorsDialog(Gtk.Dialog):
                         for line in range(error.line - 2, error.line + 3) if 0 < line <= len(code)
                     )])
 
-    def run(self):
+    def run(self):  # Run the dialog and get its response
+        """
+        Run the dialog and get its response.
+
+        Returns:
+            true if the response was accept
+        """
+        
         """
         Run the dialog and get its response.
 

@@ -15,15 +15,22 @@ import re
 import os
 import numpy as np
 from gnuradio import gr
+import csv
+import re
+import os
+import numpy as np
 
 
-class file_taps_loader(gr.basic_block):
+class file_taps_loader(gr.Block):
+    """
+    Block to make filter taps created by the filter design tool available in grc.
+    """
     """
     Block to make filter taps created by the filter design tool available in grc.
     """
 
     def __init__(self, fpath, verbose):
-        gr.basic_block.__init__(
+        gr.Block.__init__(
             self,
             name="file_taps_loader",
             in_sig=[],
